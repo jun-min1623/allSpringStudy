@@ -29,4 +29,8 @@ public class UserController {
         userService.insertUserData(user);
     }
 
+    @GetMapping("loginPage")
+    public String loginPage(){
+        return "loginpage";
+    }
 }
