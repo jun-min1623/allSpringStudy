@@ -15,14 +15,12 @@ public class AccountServiceImpl implements AccountService {
     @Autowired
     private AccountRepo accountRepo;
 
-    private UserDetails userDetails;
-
     @Override
-    public PostLoginRes login(PostLoginReq loginReq) {
+    public PostLoginRes login(PostLoginReq loginReq){
         // login 인증관련은 시큐리티 강의보면서 공부;
-        //     userDetails.
         User user = accountRepo.selectAllUserInfoByUserId(loginReq.getUser_id());
         if (user.getPwd().equals(loginReq.getPwd())) {
+            System.out.println("login Success!!");
             return new PostLoginRes(true);
         }
         return new PostLoginRes(false);

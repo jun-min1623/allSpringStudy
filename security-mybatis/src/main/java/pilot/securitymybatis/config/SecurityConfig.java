@@ -30,11 +30,9 @@ public class SecurityConfig {
 
         http
                 .formLogin()
-                //.loginPage("/loginPage")
+                .loginPage("/api/login")
                 .defaultSuccessUrl("/alluser")
                 .failureUrl("/login.html?error=true")
-                .usernameParameter("username")
-                .passwordParameter("password")
                 .loginProcessingUrl("/login_proc")
                 .successHandler(new AuthenticationSuccessHandler() {
                     @Override
