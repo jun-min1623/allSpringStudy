@@ -2,6 +2,7 @@ package pilot.securitymybatis.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,7 +19,7 @@ public class AccountController {
         this.accountService = accountService;
     }
 
-    @PostMapping("/api/login")
+    @GetMapping ("/api/login")
     public ResponseEntity<?> login(@RequestBody PostLoginReq postLogInReq){
         PostLoginRes postLogInRes = accountService.login(postLogInReq);
         return new ResponseEntity<>(postLogInRes, HttpStatus.OK);

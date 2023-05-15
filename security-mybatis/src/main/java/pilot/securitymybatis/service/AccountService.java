@@ -5,5 +5,5 @@ import pilot.securitymybatis.dto.PostLoginRes;
 import pilot.securitymybatis.model.User;
 
 public interface AccountService {
-    public PostLoginRes login(PostLoginReq loginReq);
+    PostLoginRes login(PostLoginReq loginReq);
 }
