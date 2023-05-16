@@ -19,6 +19,7 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.security.web.authentication.RememberMeServices;
+import pilot.securitymybatis.security.filters.JwtAuthenticationFilter;
 import pilot.securitymybatis.security.provider.JwtAuthenticationProvider;
 
 import java.io.IOException;
@@ -36,6 +37,11 @@ public class SecurityConfig {
     public void configureAuthentication(AuthenticationManagerBuilder builder, JwtAuthenticationProvider jwtAuthenticationProvider) {
         builder.authenticationProvider(jwtAuthenticationProvider);
     }
+    @Bean
+    public JwtAuthenticationFilter jwtAuthenticationFilter(AuthenticationManager authenticationManager){
+        return new JwtAuthenticationFilter(authenticationManager,jwt);
+    }
+
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http

@@ -7,6 +7,7 @@ import org.springframework.security.web.authentication.AuthenticationConverter;
 import org.springframework.security.web.authentication.AuthenticationFilter;
 
 public class JwtAuthenticationFilter extends AuthenticationFilter {
+
     public JwtAuthenticationFilter(AuthenticationManager authenticationManager, AuthenticationConverter authenticationConverter) {
         super(authenticationManager, authenticationConverter);
     }

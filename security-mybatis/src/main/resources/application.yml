@@ -1,4 +1,3 @@
-
 spring:
   datasource:
     url: jdbc:mysql://localhost:3306/mybatisdb
@@ -10,3 +9,8 @@ spring:
     user:
       name: user
       password: 1111
+
+jwt:
+  header: Authorization
+  secret: validSecretKey
+  token-validity-in-seconds: 86400

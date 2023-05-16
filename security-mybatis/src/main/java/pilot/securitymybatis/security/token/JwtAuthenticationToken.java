@@ -4,25 +4,42 @@ import org.springframework.security.authentication.AbstractAuthenticationToken;
 import org.springframework.security.core.GrantedAuthority;
 
 import java.util.Collection;
+import java.util.List;
 
 public class JwtAuthenticationToken extends AbstractAuthenticationToken {
-    /**
-     * Creates a token with the supplied array of authorities.
-     *
-     * @param authorities the collection of <tt>GrantedAuthority</tt>s for the principal
-     *                    represented by this authentication object.
-     */
-    public JwtAuthenticationToken(Collection<? extends GrantedAuthority> authorities) {
-        super(authorities);
+
+
+    private String jsonToken;
+    private Object credentials;
+    private Object principal;
+
+    public JwtAuthenticationToken(Object credentials, Object principal) {
+        super(null);
+        setAuthenticated(false);
+        this.credentials = credentials;
+        this.principal = principal;
     }
+
+    public JwtAuthenticationToken(String principal, Object credentials, Collection<? extends GrantedAuthority> authorities) {
+        super(authorities);
+        setAuthenticated(true);
+        this.principal = principal;
+        this.credentials = credentials;
+    }
+
+
+    public String getJsonToken() {
+        return this.jsonToken;
+    }
+
 
     @Override
     public Object getCredentials() {
-        return null;
+        return this.credentials;
     }
 
     @Override
     public Object getPrincipal() {
-        return null;
+        return this.principal;
     }
 }
