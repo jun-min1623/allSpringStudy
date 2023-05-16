@@ -11,12 +11,13 @@ public class User {
     private String pwd;
     private String email;
     private String name;
+    private String role;
 
     public String getUser_id() {
         return user_id;
     }
 
-    public String getPassword() {
+    public String getPwd() {
         return pwd;
     }
 
@@ -28,12 +29,15 @@ public class User {
         return name;
     }
 
-    public User(String user_id, String pwd, String email, String name) {
+    public String getRole() {
+        return role;
+    }
+
+    public User(String user_id, String pwd, String email, String name, String role) {
         this.user_id = user_id;
         this.pwd = pwd;
         this.email = email;
         this.name = name;
+        this.role = role;
     }
-
-
 }
