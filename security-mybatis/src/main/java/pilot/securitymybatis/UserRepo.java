@@ -16,7 +16,7 @@ public interface UserRepo {
     @Select("select * from users")
     List<User> getAllUsers();
 
-    @Insert("insert into users(user_id, pwd, email, name) values (#{user_id},#{pwd},#{email},#{name})")
+    @Insert("insert into users(user_id, pwd, email, name, roles) values (#{user_id},#{pwd},#{email},#{name},#{roles})")
     void insertUserData(User user);
 
 

@@ -1,11 +1,13 @@
 package pilot.securitymybatis.security.config;
 
+import io.jsonwebtoken.Jwt;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.websocket.Decoder;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -28,19 +30,20 @@ import java.io.IOException;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
-
-    @Bean
-    public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception {
-        return authenticationConfiguration.getAuthenticationManager();
-    }
-    @Autowired
-    public void configureAuthentication(AuthenticationManagerBuilder builder, JwtAuthenticationProvider jwtAuthenticationProvider) {
-        builder.authenticationProvider(jwtAuthenticationProvider);
-    }
-    @Bean
-    public JwtAuthenticationFilter jwtAuthenticationFilter(AuthenticationManager authenticationManager){
-        return new JwtAuthenticationFilter(authenticationManager,jwt);
-    }
+//    @Value("{$jwt}")
+//    private Jwt jwt;
+//    @Bean
+//    public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception {
+//        return authenticationConfiguration.getAuthenticationManager();
+//    }
+//    @Autowired
+//    public void configureAuthentication(AuthenticationManagerBuilder builder, JwtAuthenticationProvider jwtAuthenticationProvider) {
+//        builder.authenticationProvider(jwtAuthenticationProvider);
+//    }
+//    @Bean
+//    public JwtAuthenticationFilter jwtAuthenticationFilter(AuthenticationManager authenticationManager){
+//        return new JwtAuthenticationFilter(authenticationManager,jwt);
+//    }
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
