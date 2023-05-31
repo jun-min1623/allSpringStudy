@@ -11,7 +11,7 @@ public class User {
     private String pwd;
     private String email;
     private String name;
-    private String role;
+    private String roles;
 
     public String getUser_id() {
         return user_id;
@@ -29,8 +29,8 @@ public class User {
         return name;
     }
 
-    public String getRole() {
-        return role;
+    public String getRoles() {
+        return roles;
     }
 
     public User(String user_id, String pwd, String email, String name, String role) {
@@ -38,6 +38,6 @@ public class User {
         this.pwd = pwd;
         this.email = email;
         this.name = name;
-        this.role = role;
+        this.roles = role;
     }
 }

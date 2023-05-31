@@ -2,6 +2,7 @@ package pilot.securitymybatis.controller;
 
 
 import jakarta.annotation.Resource;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -28,5 +29,6 @@ public class UserController {
     public void insertUserData(@RequestBody User user){
         userService.insertUserData(user);
     }
+
 
 }
