@@ -6,7 +6,9 @@ import java.util.concurrent.Executors;
 
 public class Main {
     public static void main(String[] args)  {
-        fixedthreadtest();
+//        fixedthreadtest();
+
+
     }
 
     public static void fixedthreadtest(){
