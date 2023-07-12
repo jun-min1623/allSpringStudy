@@ -17,7 +17,7 @@ public class ThreadPoolimpl implements ThreadPool {
             System.out.println("current thread inside : " + t.getName());
 
             double sum = 0;
-            for (double i = 0; i < 100000000; i++) {
+            for (double i = 0; i < 2000000000; i++) {
                 sum += i;
             }
             System.out.println("FixedThreadPool(" + threadcnt + ") sum: " + sum + "//" + System.currentTimeMillis());
